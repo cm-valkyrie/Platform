@@ -1,2 +1,7 @@
 <?php defined('_EXEC') or die; ?>
-<p>{$lang.hello_world}</p>
+
+<div id="page">
+    <main id="main-content">
+        <h1>¡Hola mundo!</h1>
+    </main>
+</div>

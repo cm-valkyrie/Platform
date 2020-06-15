@@ -91,7 +91,7 @@ class Configuration
 	 *
      * @var string $time_zone
      */
-	public static $time_zone = 'America/Mexico_City';
+	public static $time_zone = 'America/Cancun';
 
 	/**
      * Clave secreta
@@ -100,7 +100,7 @@ class Configuration
 	 *
      * @var string $secret
      */
-	public static $secret = '&Q1EMGR$U?1mMO2k';
+	public static $secret = 'qLhYQ7h9Gih0PHat';
 
 	/**
      * Tiempo de vida para una session en bytes.
@@ -109,7 +109,7 @@ class Configuration
 	 *
      * @var integer $cookie_lifetime
      */
-	public static $cookie_lifetime	= 86400;
+	public static $cookie_lifetime	= 86400; // Duracion de un día
 
 	/**
      * Estado de uso de la base de datos.
@@ -146,7 +146,7 @@ class Configuration
 	 *
      * @var string $db_name
      */
-	public static $db_name = 'valkyrie';
+	public static $db_name = 'Valkyrie';
 
 	/**
      * Usuario de la base de datos

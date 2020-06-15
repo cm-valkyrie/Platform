@@ -10,7 +10,6 @@ class Index_controller extends Controller
 
 	public function index()
 	{
-		define('_title', '{$lang.title}');
 		$template = $this->view->render($this, 'index');
 
 		echo $template;

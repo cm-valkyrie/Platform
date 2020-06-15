@@ -8,9 +8,4 @@ class Index_model extends Model
 		parent::__construct();
 	}
 
-	public function index()
-	{
-		return 'Hola mundo (model)';
-	}
-
 }

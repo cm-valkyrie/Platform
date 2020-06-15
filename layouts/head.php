@@ -12,11 +12,10 @@
 
 		<!--Adaptive Responsive-->
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-		<meta name="author" content="" />
+		<meta name="author" content="codemonkey.com.mx" />
 		<meta name="description" content="" />
 
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-		<link rel="stylesheet" href="{$path.css}styles.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="{$path.css}styles.css?v=1.0" type="text/css" media="all" />
 		{$dependencies.css}
 	</head>
 	<body>

@@ -2,42 +2,42 @@
 defined('_EXEC') or die;
 
 /**
- *
- * @package Valkyrie.Libraries
- *
- * @since 1.0.0
- * @version 1.0.0
- * @license You can see LICENSE.txt
- *
- * @author David Miguel Gómez Macías < davidgomezmacias@gmail.com >
- * @copyright Copyright (C) CodeMonkey - Platform. All Rights Reserved.
- */
+*
+* @package Valkyrie.Libraries
+*
+* @since 1.0.0
+* @version 1.0.1
+* @license You can see LICENSE.txt
+*
+* @author David Miguel Gómez Macías < davidgomezmacias@gmail.com >
+* @copyright Copyright (C) CodeMonkey - Platform. All Rights Reserved.
+*/
 
 class Render
 {
     /**
-     *
-     * @var object
-     */
+    *
+    * @var object
+    */
     private $format;
 
     /**
-	 * Constructor.
-     *
-     * @return  void
-     */
+    * Constructor.
+    *
+    * @return  void
+    */
     public function __construct()
-	{
+    {
         $this->format = new Format();
-	}
+    }
 
     /**
-	 * Remplaza los placeholders
-     *
-     * @param   string    $buffer   Buffer pre-cargado.
-     *
-     * @return  string
-     */
+    * Remplaza los placeholders
+    *
+    * @param   string    $buffer   Buffer pre-cargado.
+    *
+    * @return  string
+    */
     public function placeholders( $buffer )
     {
         $replace = [
@@ -52,12 +52,12 @@ class Render
     }
 
     /**
-	 * Remplaza los paths.
-     *
-     * @param   string    $buffer   Buffer pre-cargado.
-     *
-     * @return  string
-     */
+    * Remplaza los paths.
+    *
+    * @param   string    $buffer   Buffer pre-cargado.
+    *
+    * @return  string
+    */
     public function paths( $buffer )
     {
         $path = ( Format::check_path_admin() ) ? PATH_ADMINISTRATOR_INCLUDES : PATH_INCLUDES;
@@ -65,8 +65,7 @@ class Render
 
         $ini = parse_ini_file($path);
 
-        foreach ( $ini as $key => $value )
-            $buffer = str_replace('{$path.' . $key . '}', $value, $buffer);
+        foreach ( $ini as $key => $value ) $buffer = str_replace('{$path.' . $key . '}', $value, $buffer);
 
         return $buffer;
     }
