@@ -37,7 +37,7 @@ class Security
             foreach ( $url as $key => $value )
             {
                 if ( empty($value) ) unset($url[$key]);
-                else $params[] = strtolower(self::clean_string($value));
+                else $params[] = self::clean_string($value);
             }
 
             unset($url);
@@ -62,14 +62,23 @@ class Security
     {
         if ( $str !== false )
         {
-            $str    = trim($str);
-
-            $find   = array('á', 'é', 'í', 'ó', 'ú', 'ñ');
-            $repl   = array('a', 'e', 'i', 'o', 'u', 'n');
-            $str    = str_replace($find, $repl, $str);
-
-            $find   = array(' ', '&', '\r\n', '\n', '+');
-            $str    = str_replace ($find, '-', $str);
+            $str = trim( $str );
+            $str = preg_replace('/[ ]{2}/', ' ', $str);
+            $str = str_replace(['á', 'à', 'ä', 'â', 'ª'], 'a', $str);
+            $str = str_replace(['Á', 'À', 'Â', 'Ä'], 'A', $str);
+            $str = str_replace(['é', 'è', 'ë', 'ê'], 'e', $str);
+            $str = str_replace(['É', 'È', 'Ê', 'Ë'], 'E', $str);
+            $str = str_replace(['í', 'ì', 'ï', 'î'], 'i', $str);
+            $str = str_replace(['Í', 'Ì', 'Ï', 'Î'], 'I', $str);
+            $str = str_replace(['ó', 'ò', 'ö', 'ô'], 'o', $str);
+            $str = str_replace(['Ó', 'Ò', 'Ö', 'Ô'], 'O', $str);
+            $str = str_replace(['ú', 'ù', 'ü', 'û'], 'u', $str);
+            $str = str_replace(['Ú', 'Ù', 'Û', 'Ü'], 'U', $str);
+            $str = str_replace('ñ', 'n', $str);
+            $str = str_replace('Ñ', 'N', $str);
+            $str = str_replace(' ', '_', $str);
+            $str = preg_replace('/[^ A-Za-z0-9_\-]/', '', $str);
+            $str = str_replace(["\\", "\r\n", "\n", "¨", "ç", "Ç", "º", "~", "#", "@", "|", "!", '"', "·", "$", "%", "&", "/", "(", ")", "?", "'", "¡", "¿", "[", "^", "<code>", "]", "+", "}", "{", "¨", "´", ">", "< ", ";", ",", ":", "."], '', $str);
         }
 
         return $str;
