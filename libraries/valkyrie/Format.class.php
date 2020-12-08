@@ -173,9 +173,7 @@ class Format
 		{
 			if ( !is_null($arr) )
 			{
-				global $data;
-
-				$data = $arr;
+				foreach ( $arr as $key => $value ) global ${$key};
 			}
 
 			ob_start();
