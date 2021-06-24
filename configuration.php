@@ -1,13 +1,19 @@
-<?php
-defined('_EXEC') or die;
+<?php namespace BuriPHP;
 
 /**
  *
- * @author David Miguel Gómez Macías < davidgomezmacias@gmail.com >
- * @package Valkyrie.Libraries
+ * @package BuriPHP
+ *
  * @since 1.0.0
- * @version 1.0.0
+ * @version 1.1.0
+ * @license You can see LICENSE.txt
+ *
+ * @author David Miguel Gómez Macías < davidgomezmacias@gmail.com >
+ * @copyright Copyright (C) CodeMonkey - Platform. All Rights Reserved.
  */
+
+defined('_EXEC') or die;
+
 class Configuration
 {
 	/**
@@ -17,7 +23,7 @@ class Configuration
 	 *
      * @var string $domain
      */
-	public static $domain = 'localhost';
+	public static $domain = '';
 
 	/**
      * Nombre del sitio web.
@@ -26,7 +32,7 @@ class Configuration
 	 *
      * @var string $web_page
      */
-	public static $web_page = 'Valkyrie';
+	public static $web_page = 'BuriPHP';
 
 	/**
      * Idioma por default
@@ -46,7 +52,7 @@ class Configuration
 	 *
      * @var string $error_reporting
      */
-	public static $error_reporting = 'development';
+	public static $error_reporting = 'none';
 
 	/**
      * Modo para debuggear errores.
@@ -100,7 +106,7 @@ class Configuration
 	 *
      * @var string $secret
      */
-	public static $secret = 'qLhYQ7h9Gih0PHat';
+	public static $secret = '';
 
 	/**
      * Tiempo de vida para una session en bytes.
@@ -137,7 +143,7 @@ class Configuration
 	 *
      * @var string $db_host
      */
-	public static $db_host = 'localhost';
+	public static $db_host = '';
 
 	/**
      * Nombre de la base de datos
@@ -146,7 +152,7 @@ class Configuration
 	 *
      * @var string $db_name
      */
-	public static $db_name = 'Valkyrie';
+	public static $db_name = '';
 
 	/**
      * Usuario de la base de datos
@@ -155,7 +161,7 @@ class Configuration
 	 *
      * @var string $db_user
      */
-	public static $db_user = 'root';
+	public static $db_user = '';
 
 	/**
      * Contraseña de la base de datos.
@@ -192,26 +198,6 @@ class Configuration
      * @var integer $db_port
      */
 	public static $db_port = 3306;
-
-	/**
-     * Archivo de base de datos, unicamente para SQL Lite.
-	 * @example my/database/path/database.db
-	 *
-	 * @static
-	 *
-     * @var string $db_prefix
-     */
-	public static $db_file = '';
-
-	/**
-     * Opciones de conexion extras. Opcional.
-	 * @link http://www.php.net/manual/en/pdo.setattribute.php [Aprender más]
-	 *
-	 * @static
-	 *
-     * @var array $db_option
-     */
-	public static $db_option = [];
 
 	/**
      * Estado de autentificacion para el uso en envio de correos SMTP.
